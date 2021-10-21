@@ -1,0 +1,253 @@
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+  }
+  .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 10px;
+    background-color: rgb(63, 63, 63);
+  }
+  .card {
+    all: unset;
+    border-radius: 4px;
+    background-color: #111111;
+    color: #e6ebf1;
+    height: 40px;
+    margin: 0 0px 3px 0px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+  .card span {
+    float: left;
+  }
+  .card .title {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: rgba(92, 16, 16, 0.329);
+    color: #ffffff;
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+  }
+  .geekmark {
+    height: 25px;
+    width: 25px;
+    background-color: #111111;
+    margin-right: 10px;
+  }
+  .main:hover input~.geekmark {
+    border: 1px solid white;
+  }
+  .play-pause {
+    visibility: hidden;
+  }
+  .card-container .card:hover .play-pause {
+    visibility: unset;
+  }
+  .main input:active~.geekmark {
+    background-color: rgb(255, 255, 255);
+  }
+  .main input:checked~.geekmark {
+    background-color: rgb(68, 0, 0);
+    padding: 1px;
+    border: 1px solid rgb(179, 179, 255);
+  }
+  .geekmark:after {
+    content: "";
+    position: relative;
+    top: 20%;
+    display: none;
+  }
+  .main input:checked~.geekmark:after {
+    display: block;
+  }
+  .geekmark:after {
+    left: 8px;
+    bottom: 5px;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #125699;
+  }
+  @media screen and (max-width: 767px) {
+    .card-container>*:not(.circle-link),
+    .terminal {
+      width: 100%;
+    }
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+  }
+  .box {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .aside {
+    color: rgb(255, 255, 255);
+    top: 50px;
+    height: 100vh;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+  }
+  .aside .row {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 2px;
+    padding: 0px;
+    border-bottom: 1px solid rgb(84, 43, 84);
+  }
+  .aside .row:hover {
+    background-color: rgb(78, 78, 78);
+  }
+  .current-song-window {
+    background-color: rgb(72, 0, 0);
+    color: rgb(255, 255, 255);
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    height: 90px;
+  }
+  #play-pause {
+    margin: 0px 30px;
+  }
+  .song-seekbar {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+  .song-seekbar:focus {
+    outline: none;
+  }
+  .song-seekbar::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4.8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #dcdcdc;
+    margin: -4px;
+    border-radius: 25px;
+    border: 0px solid #075403;
+  }
+  .song-seekbar::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 2px solid #abe3ff;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background: rgb(46, 46, 46);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3.6px;
+  }
+ 
+  .song-seekbar::-moz-range-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #ac51b5;
+    border-radius: 25px;
+    border: 0px solid #000101;
+  }
+  .song-seekbar::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001c;
+    cursor: pointer;
+  }
+  .song-seekbar::-ms-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 39px 0;
+    color: transparent;
+  }
+  .song-seekbar::-ms-fill-lower {
+    background: #ac51b5;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  .song-seekbar::-ms-fill-upper {
+    background: #ac51b5;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  .song-seekbar::-ms-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001c;
+    cursor: pointer;
+  }
+  .current-song-window .song-seekbar:focus::-ms-fill-lower {
+    background: #ac51b5;
+  }
+  .current-song-window .song-seekbar:focus::-ms-fill-upper {
+    background: #ac51b5;
+  }
+  .volume {
+    float: right;
+  }
+  .mute-volume {
+    padding-bottom: 5px;
+  }
+  .volume-seekbar {
+    background: #ac51b5;
+    margin-left: 10px;
+  }
