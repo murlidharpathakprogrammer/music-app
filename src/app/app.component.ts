@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'music-app';
+  songTitle:string = "Shri Ram Jaanki Baithe Hein Mere Seene Mein";
 }
